@@ -1,0 +1,37 @@
+world http {
+default export interface {
+    enum http-error {
+        success,
+        invalid-handle,
+        memory-not-found,
+        memory-access-error,
+        buffer-too-small,
+        header-not-found,
+        utf8-error,
+        destination-not-allowed,
+        invalid-method,
+        invalid-encoding,
+        invalid-url,
+        request-error,
+        runtime-error,
+        too-many-sessions,
+    }
+
+    resource: request
+    
+    type status-code = u16
+    
+    type outgoing-body = string
+    
+    type incoming-body = string
+    
+    type response-handle = request
+    
+    type header-value = string
+    
+    type written-bytes = u16
+    
+    req: func(url: string, method: string, headers: string, body: string) -> tuple<
+    
+}
+}
